@@ -10,4 +10,4 @@ def fob(x):
             print(i, 'buzz')
             continue
         print (i)
-fob(22)
+fob(24)
