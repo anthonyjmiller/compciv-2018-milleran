@@ -23,6 +23,6 @@ def parse_headline_tags(txt):
 
 def fetch_html(url):
  import requests
-   url = 'https://compciv.github.io/stash/hello.html'
-   resp=requests.get(url)
-   return(resp.text)
+ url = 'https://compciv.github.io/stash/hello.html'
+ resp=requests.get(url)
+ return(resp.text)
