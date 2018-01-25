@@ -8,7 +8,7 @@ def print_hedz(url='https://www.stanford.edu/news/'):
 
 def extract_headline_text(txt):
     a = txt.split('<')[2]
-    b = a.split('>')[1]
+    b = a.split('>')[0]
     return b
 
 def parse_headline_tags(txt):
