@@ -14,9 +14,9 @@ def extract_headline_text(txt):
 def parse_headline_tags(txt):
     hedtags = []
     lines = txt.splitlines()
-        fulltext = html_fetch()
-        lines = fulltext.splitlines()
-        for line in lines:
+    fulltext = html_fetch()
+    lines = fulltext.splitlines()
+    for line in lines:
         if HEADLINE_PATTERN in line:
             hedtags.append(line)
     return hedtags
