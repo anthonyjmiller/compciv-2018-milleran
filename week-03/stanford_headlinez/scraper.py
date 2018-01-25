@@ -1,5 +1,5 @@
 def print_hedz(url='https://www.stanford.edu/news/'):
-txt = fetch_html(url)
+    txt = fetch_html(url)
     htags = parse_headline_tags(txt)
 
     for t in htags:
