@@ -1,24 +1,28 @@
-def print_hedz(url='https://compciv.github.io/stash/hello.html'):
-   txt = fetch_html(url)
-   htags = parse_headline_tags(txt)
-   for t in htags:
+def print_hedz(url='https://www.stanford.edu/news/'):
+txt = fetch_html(url)
+    htags = parse_headline_tags(txt)
+
+    for t in htags:
         hedtxt = extract_headline_text(t)
         print(hedtxt)
 
 def extract_headline_text(txt):
-    return txt.split('>')[2].split('<')[0]
+    a = txt.split('<')[2]
+    b = a.split('>')[1]
+    return b
 
-def parse_headline_tags(url):
-   mylist = []
-   fulltext = html_fetch()
-   lines = fulltext.splitlines()
-   for line in lines:
-      if '<h3><a' in line:
-         mylist.append(line)
-         return mylist
+def parse_headline_tags(txt):
+    hedtags = []
+    lines = txt.splitlines()
+        fulltext = html_fetch()
+        lines = fulltext.splitlines()
+        for line in lines:
+        if HEADLINE_PATTERN in line:
+            hedtags.append(line)
+    return hedtags
 
 def fetch_html(url):
-   import requests
+ import requests
    url = 'https://compciv.github.io/stash/hello.html'
    resp=requests.get(url)
    return(resp.text)
