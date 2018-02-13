@@ -1,5 +1,8 @@
 from data_helper import get_html
 from bs4 import BeautifulSoup
+txt = get_html()
+soup = BeautifulSoup(txt, 'lxml')
+rows = soup.select('tr')
 
 def get_and_parse_inmate_rows():
     """
@@ -29,12 +32,7 @@ def get_and_parse_inmate_rows():
     """
 
     ## fill this out for yourself...
-    from data_helper import get_html
-    from bs4 import BeautifulSoup
-    txt = get_html()
-    soup = BeautifulSoup(txt, 'lxml')
-    tags = soup.select('tr')
-    return tags
+    return rows[1:]
 
 
 def count_inmates():
@@ -48,11 +46,6 @@ def count_inmates():
     Returns:
         <int>
     """
-    from data_helper import get_html
-    from bs4 import BeautifulSoup
-    txt = get_html()
-    soup = BeautifulSoup(txt, 'lxml')
-    tags = soup.select('tr')
-    return len(tags)
+    return len(rows[1:])
     ## fill this out for yourself
     ## (this function could literally be just one line)
